@@ -23,7 +23,7 @@ namespace GD.Items
         [SerializeField]
         [Tooltip("A dictionary of all inventores (e.g. a saddlebag")]
         private Dictionary<ItemCategoryType, Inventory> contents
-    = new Dictionary<ItemCategoryType, Inventory>();
+            = new Dictionary<ItemCategoryType, Inventory>();
 
         [FoldoutGroup("Events")]
         [SerializeField]
@@ -46,8 +46,18 @@ namespace GD.Items
                 return contents[categoryType];
             }
         }
-
         #endregion Properties
+
+        /// <summary>
+        /// Clears all data from the dictionatie's inventories
+        /// </summary>
+        public void ClearInventories()
+        {
+            foreach (Inventory inv in contents.Values)
+            {
+                inv.Clear();
+            }
+        }
 
         public Inventory Get(ItemCategoryType itemCategory)
         {

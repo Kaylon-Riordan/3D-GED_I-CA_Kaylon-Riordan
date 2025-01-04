@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64aa25ca9a39c7b46ad546496c273a82, type: 3}
   m_Name: OnInteractablePickup
   m_EditorClassIdentifier: 
-  name: 
-  description: 
+  name: OnInteractablePickup
+  description: Raised when we pickup an interactable!
