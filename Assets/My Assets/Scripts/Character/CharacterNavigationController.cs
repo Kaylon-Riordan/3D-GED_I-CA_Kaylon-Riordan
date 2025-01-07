@@ -15,27 +15,20 @@ namespace GD.Controllers
         private Camera cam;
 
         private NavMeshAgent player;
-        private PlayerInputActions inputs;
-        private InputAction leftClick;
         private bool move;
+
+        private InputManager input;
 
         private void Awake()
         {
             player = GetComponent<NavMeshAgent>();
-            inputs = new PlayerInputActions();
         }
-        private void OnEnable()
+        private void Start()
         {
-            leftClick = inputs.Player.LeftClick;
-            leftClick.Enable();
-            leftClick.performed += LeftClickPressed;
-            leftClick.canceled += LeftClickReleased;
-        }
-        private void OnDisable()
-        {
-            leftClick.performed -= LeftClickPressed;
-            leftClick.canceled -= LeftClickReleased;
-            leftClick.Disable();
+            input = InputManager.instance;
+
+            InputManager.leftClickDown += StartFollowing;
+            InputManager.leftClickUp += StopFollowing;
         }
 
         /// <summary>
@@ -58,8 +51,7 @@ namespace GD.Controllers
         /// <summary>
         /// Called when player left clicks, turns on movment
         /// </summary>
-        /// <param name="context"> Informs when the left click input is activated </param>
-        public void LeftClickPressed(InputAction.CallbackContext context)
+        public void StartFollowing()
         {
             move = true;
         }
@@ -67,8 +59,7 @@ namespace GD.Controllers
         /// <summary>
         /// Called when player releases left click, turns off movment
         /// </summary>
-        /// <param name="context"> Informs when the left click input is activated </param>
-        public void LeftClickReleased(InputAction.CallbackContext context)
+        public void StopFollowing()
         {
             move = false;
         }
