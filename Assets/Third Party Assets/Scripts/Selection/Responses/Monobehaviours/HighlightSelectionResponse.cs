@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.AI;
 
 namespace GD.Selection
 {
@@ -19,7 +20,20 @@ namespace GD.Selection
         //store the original material of the selected object to allow for deselection
         private Material originalMaterial;
 
+        private InputManager input;
+
+        private bool hovering;
+
         #endregion Internal
+
+        private void Start()
+        {
+            input = InputManager.instance;
+
+            InputManager.leftClickDown += Interact;
+
+            hovering = false;
+        }
 
         //Called when we select a NEW thing - transform is the ref to new thing
         public override void OnSelect(Transform currentTransform)
@@ -34,6 +48,8 @@ namespace GD.Selection
 
             //store the current as previous for the next call to OnSelect
             base.OnSelect(currentTransform);
+
+            hovering = true;
         }
 
         //Called when we deselect something - transform is the old selected thing
@@ -45,6 +61,16 @@ namespace GD.Selection
             //am i deselecting a valid renderer? did i record its original material?
             if (originalMaterial != null && renderer != null)
                 renderer.material = originalMaterial;
+
+            hovering = false;
+        }
+
+        public void Interact()
+        {
+            if(hovering)
+            {
+                Debug.Log("CLICK!");
+            }
         }
     }
 }
