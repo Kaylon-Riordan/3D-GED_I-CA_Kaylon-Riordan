@@ -27,8 +27,8 @@ namespace GD.Controllers
         {
             input = InputManager.instance;
 
-            InputManager.leftClickDown += StartFollowing;
-            InputManager.leftClickUp += StopFollowing;
+            InputManager.rightClickDown += StartFollowing;
+            InputManager.rightClickUp += StopFollowing;
         }
 
         /// <summary>

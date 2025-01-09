@@ -1,3 +1,5 @@
+using GD.Events;
+using GD.Items;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -12,6 +14,10 @@ namespace GD.Selection
 
         [SerializeField]
         private Material highlightMaterial;
+
+        [SerializeField]
+        [Tooltip("The event that is raised when an item is selected")]
+        private GameEvent onSelection;
 
         #endregion Fields
 
@@ -73,7 +79,7 @@ namespace GD.Selection
         {
             if(hovering)
             {
-                Debug.Log("CLICK!");
+                onSelection?.Raise();
             }
         }
     }
