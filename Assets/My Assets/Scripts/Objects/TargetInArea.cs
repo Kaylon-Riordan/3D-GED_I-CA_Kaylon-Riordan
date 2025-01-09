@@ -24,4 +24,12 @@ public class TargetInArea : MonoBehaviour
             inArea = true;
         }
     }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (targetLayer.OnLayer(other.gameObject))
+        {
+            inArea = false;
+        }
+    }
 }

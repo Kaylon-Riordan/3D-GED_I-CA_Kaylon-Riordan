@@ -38,18 +38,22 @@ namespace GD.Selection
         //Called when we select a NEW thing - transform is the ref to new thing
         public override void OnSelect(Transform currentTransform)
         {
-            //get the renderer to access the material
-            var renderer = currentTransform.GetComponent<Renderer>();
+            var obj = currentTransform.gameObject;
+            if (obj.GetComponent<Slot>().targetArea.inArea)
+            {
+                //get the renderer to access the material
+                var renderer = currentTransform.GetComponent<Renderer>();
 
-            //remember old material
-            originalMaterial = renderer.material;
-            //set to new material
-            renderer.material = highlightMaterial;
+                //remember old material
+                originalMaterial = renderer.material;
+                //set to new material
+                renderer.material = highlightMaterial;
 
-            //store the current as previous for the next call to OnSelect
-            base.OnSelect(currentTransform);
+                //store the current as previous for the next call to OnSelect
+                base.OnSelect(currentTransform);
 
-            hovering = true;
+                hovering = true;
+            }
         }
 
         //Called when we deselect something - transform is the old selected thing
