@@ -18,12 +18,12 @@ namespace GD.Items
         [FoldoutGroup("Type & Category", expanded: true)]
         [SerializeField, EnumPaging]
         [Tooltip("The category of item")]
-        private ItemCategoryType itemCategory = ItemCategoryType.PuzzleItem;
+        private ItemCategoryType itemCategory = ItemCategoryType.Electronics;
 
         [FoldoutGroup("Type & Category")]
         [SerializeField, EnumPaging]
         [Tooltip("The type of item")]
-        private ItemType itemType = ItemType.Clue;
+        private ItemType itemType = ItemType.Resistors;
 
         [FoldoutGroup("UI & Sound", expanded: true)]
         [SerializeField]

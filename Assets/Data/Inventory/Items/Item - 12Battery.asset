@@ -15,7 +15,7 @@ MonoBehaviour:
   name: '?'
   description: ???
   itemCategory: 1
-  itemType: 0
-  uiIcon: {fileID: 0}
+  itemType: 1
+  uiIcon: {fileID: 21300000, guid: a0a85c89c0e5f5b44955cfa9deaf4b9c, type: 3}
   audioClip: {fileID: 0}
-  audioPosition: {x: 37.53, y: 2.2076018, z: 40.77}
+  audioPosition: {x: 37.53, y: 2.712679, z: 40.77}

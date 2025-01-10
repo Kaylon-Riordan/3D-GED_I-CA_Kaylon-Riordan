@@ -9,28 +9,10 @@ namespace GD.Types
     public enum ItemCategoryType : sbyte
     {
         /// <summary>
-        /// Items used to unlock or solve puzzles or progress the storyline.
+        /// Items used to complete gaps in a circuit.
         /// </summary>
-        [Description("Items used to unlock or solve puzzles or progress the storyline")]
-        PuzzleItem,
-
-        /// <summary>
-        /// Items used to unlock or solve puzzles or progress the storyline.
-        /// </summary>
-        [Description("Items used to add resistance to circuit")]
-        Batteries,
-
-        /// <summary>
-        /// Items used to unlock or solve puzzles or progress the storyline.
-        /// </summary>
-        [Description("Items used to unlock or solve puzzles or progress the storyline")]
-        Bulbs,
-
-        /// <summary>
-        /// Items used to unlock or solve puzzles or progress the storyline.
-        /// </summary>
-        [Description("Items used to unlock or solve puzzles or progress the storyline")]
-        Resistors
+        [Description("Items used to complete gaps in a circuit")]
+        Electronics
 
     }
 }
