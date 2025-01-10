@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e593bb9f38085e74c9574b1bbbf9837d, type: 3}
-  m_Name: Inventory - Puzzle Items
+  m_Name: Inventory - Resistors
   m_EditorClassIdentifier: 
   serializationData:
     SerializedFormat: 2

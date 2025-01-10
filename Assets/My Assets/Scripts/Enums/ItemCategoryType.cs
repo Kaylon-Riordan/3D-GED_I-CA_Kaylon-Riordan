@@ -12,6 +12,25 @@ namespace GD.Types
         /// Items used to unlock or solve puzzles or progress the storyline.
         /// </summary>
         [Description("Items used to unlock or solve puzzles or progress the storyline")]
-        PuzzleItem
+        PuzzleItem,
+
+        /// <summary>
+        /// Items used to unlock or solve puzzles or progress the storyline.
+        /// </summary>
+        [Description("Items used to add resistance to circuit")]
+        Batteries,
+
+        /// <summary>
+        /// Items used to unlock or solve puzzles or progress the storyline.
+        /// </summary>
+        [Description("Items used to unlock or solve puzzles or progress the storyline")]
+        Bulbs,
+
+        /// <summary>
+        /// Items used to unlock or solve puzzles or progress the storyline.
+        /// </summary>
+        [Description("Items used to unlock or solve puzzles or progress the storyline")]
+        Resistors
+
     }
 }

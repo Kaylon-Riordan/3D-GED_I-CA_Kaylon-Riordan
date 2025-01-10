@@ -18,9 +18,4 @@ public class UiManager : MonoBehaviour
     {
         inventoryScreen.SetActive(true);
     }
-
-    public void TEST()
-    {
-        Debug.Log("Selected");
-    }
 }
