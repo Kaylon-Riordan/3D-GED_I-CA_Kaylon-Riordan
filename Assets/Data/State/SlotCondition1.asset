@@ -9,14 +9,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 11b114f5696f3624da1271564de6a46b, type: 3}
-  m_Name: Win Condition - Player Rank - Greater 100
+  m_Script: {fileID: 11500000, guid: 8673f7a91c9dcac40805082cde3695b8, type: 3}
+  m_Name: SlotCondition1
   m_EditorClassIdentifier: 
-  name: 
-  description: 
-  evaluateStrategy: 1
+  name: Slot Condition 1
+  description: Checks if slot 1 has the right data slotted in.
+  evaluateStrategy: 0
   priorityLevel: 5
-  OnConditionMet: {fileID: 11400000, guid: 41f8c1065a955f04a89be5f681f2c562, type: 2}
+  OnConditionMet: {fileID: 0}
   isMet: 0
   timeMet: -1
-  rankThreshold: 200
+  slot: {fileID: 0}
+  data: {fileID: 11400000, guid: 88d2fec25fcba544095b52a82749a103, type: 2}

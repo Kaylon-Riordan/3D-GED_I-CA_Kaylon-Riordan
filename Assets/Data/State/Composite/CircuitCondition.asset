@@ -9,17 +9,18 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d0cf5ab4f96379241846424b77a8f058, type: 3}
-  m_Name: Win Condition - OR - Player Rank OR Team Rank
+  m_Script: {fileID: 11500000, guid: 41256f7f173f0d8478ab9eb86511b0f2, type: 3}
+  m_Name: CircuitCondition
   m_EditorClassIdentifier: 
-  name: Player Rank OR Team Rank
+  name: Circuit Conndition
   description: 
   evaluateStrategy: 1
   priorityLevel: 5
   OnConditionMet: {fileID: 0}
   isMet: 0
   timeMet: -1
-  conditionType: 1
+  conditionType: 0
   conditions:
-  - {fileID: 11400000, guid: 7037132748aa3584488e13f6b7eca435, type: 2}
-  - {fileID: 11400000, guid: 063dcb8812889344282321c782beae25, type: 2}
+  - {fileID: 11400000, guid: c257ec5260625f94590b117df01e4542, type: 2}
+  - {fileID: 11400000, guid: 9775598d03ccc584aabb27203b79d44a, type: 2}
+  - {fileID: 11400000, guid: c6fdf504535958445afb00f287d95acd, type: 2}

@@ -17,7 +17,7 @@ namespace GD.Selection
 
         [SerializeField]
         [Tooltip("The event that is raised when an item is selected")]
-        private GameEvent onSelection;
+        private SlotGameEvent onSelection;
 
         #endregion Fields
 
@@ -29,6 +29,8 @@ namespace GD.Selection
         private InputManager input;
 
         private bool hovering;
+
+        private Transform current;
 
         #endregion Internal
 
@@ -58,6 +60,8 @@ namespace GD.Selection
                 //store the current as previous for the next call to OnSelect
                 base.OnSelect(currentTransform);
 
+                current = currentTransform;
+
                 hovering = true;
             }
         }
@@ -79,7 +83,7 @@ namespace GD.Selection
         {
             if(hovering)
             {
-                onSelection?.Raise();
+                onSelection?.Raise(current.GetComponent<Slot>());
             }
         }
     }

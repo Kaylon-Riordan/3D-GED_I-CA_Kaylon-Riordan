@@ -21,6 +21,9 @@ public class InputManager : MonoBehaviour
     public delegate void RightClickUp();
     public static RightClickUp rightClickUp;
 
+    [HideInInspector]
+    public bool active;
+
     private void Awake()
     {
         if (instance != null && instance != this)
@@ -31,6 +34,8 @@ public class InputManager : MonoBehaviour
         instance = this;
         DontDestroyOnLoad(gameObject);
         inputs = new PlayerInputActions();
+
+        active = true;
     }
     private void OnEnable()
     {
@@ -61,7 +66,7 @@ public class InputManager : MonoBehaviour
     /// <param name="context"> Informs when the left click input is activated </param>
     public void LeftClickPressed(InputAction.CallbackContext context)
     {
-        if (leftClickDown != null)
+        if (leftClickDown != null && active)
         {
             leftClickDown();
         }
@@ -73,7 +78,7 @@ public class InputManager : MonoBehaviour
     /// <param name="context"> Informs when the left click input is activated </param>
     public void LeftClickReleased(InputAction.CallbackContext context)
     {
-        if (leftClickUp!= null)
+        if (leftClickUp!= null && active)
         {
             leftClickUp();
         }
@@ -85,7 +90,7 @@ public class InputManager : MonoBehaviour
     /// <param name="context"> Informs when the right click input is activated </param>
     public void RightClickPressed(InputAction.CallbackContext context)
     {
-        if (rightClickDown != null)
+        if (rightClickDown != null && active)
         {
             rightClickDown();
         }
@@ -97,9 +102,19 @@ public class InputManager : MonoBehaviour
     /// <param name="context"> Informs when the right click input is activated </param>
     public void RightClickReleased(InputAction.CallbackContext context)
     {
-        if(rightClickUp != null)
+        if(rightClickUp != null && active)
         {
             rightClickUp();
         }
+    }
+
+    public void InputOn()
+    {
+        active = true;
+    }
+
+    public void InputOff()
+    {
+        active = false;
     }
 }

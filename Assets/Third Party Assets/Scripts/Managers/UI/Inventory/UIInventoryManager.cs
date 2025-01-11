@@ -27,6 +27,9 @@ namespace GD.UI
         [Tooltip("Prefab for inventory item UI")]
         private GameObject itemUIPrefab;
 
+        [HideInInspector]
+        public Slot currentSlot;
+
         #endregion Fields
 
         #region Fields - Internal
@@ -67,6 +70,10 @@ namespace GD.UI
                 itemUIDictionary[itemData] = itemUI;
             }
 
+            var button = itemUI.GetComponentInChildren<Button>();
+            button.onClick.RemoveAllListeners();
+            button.onClick.AddListener(() => this.currentSlot.SlotItem(itemData));
+
             var countText = itemUI.GetComponentInChildren<TextMeshProUGUI>();
             countText.text = count.ToString();
         }
@@ -80,6 +87,12 @@ namespace GD.UI
             {
                 CreateOrUpdate(itemEntry.Key, itemEntry.Value);
             }
+        }
+
+        public void SetSlot(Slot newSlot)
+        {
+            this.currentSlot = newSlot;
+            InitializeUI();
         }
 
         #endregion Methods
