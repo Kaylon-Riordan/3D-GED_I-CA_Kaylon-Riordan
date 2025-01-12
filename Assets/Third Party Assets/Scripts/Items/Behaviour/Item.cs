@@ -1,4 +1,7 @@
-﻿using GD.Events;
+﻿using DG.Tweening;
+using GD.Audio;
+using GD.Events;
+using GD.Types;
 using UnityEngine;
 
 namespace GD.Items
@@ -44,6 +47,9 @@ namespace GD.Items
 
                 //raise the event to notify listeners
                 onItemEvent?.Raise(itemData);
+
+                //stop tweens before destroying object
+                transform.DOKill();
 
                 //remove the item from the scene
                 Destroy(gameObject);

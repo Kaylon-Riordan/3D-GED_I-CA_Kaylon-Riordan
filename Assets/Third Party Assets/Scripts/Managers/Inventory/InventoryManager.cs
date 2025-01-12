@@ -1,3 +1,4 @@
+using GD.Audio;
 using GD.Types;
 using Sirenix.OdinInspector;
 using System;
@@ -17,6 +18,10 @@ namespace GD.Items
         [Tooltip("The player's inventory collection (e.g. a saddlebag")]
         private InventoryCollection inventoryCollection;
 
+        [SerializeField]
+        [Tooltip("Sound played when item is picked up")]
+        private AudioClip pickUpSound;
+
         private void Awake()
         {
             //check if the inventory collection has been added
@@ -33,6 +38,8 @@ namespace GD.Items
         public void OnInventoryAdd(ItemData data)
         {
             inventoryCollection.Add(data);
+
+            AudioManager.Instance.PlaySound(pickUpSound, AudioMixerGroupName.SFX, data.AudioPosition);
         }
     }
 }

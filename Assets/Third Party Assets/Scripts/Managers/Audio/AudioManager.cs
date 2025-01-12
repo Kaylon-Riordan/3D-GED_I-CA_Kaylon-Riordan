@@ -22,6 +22,9 @@ namespace GD.Audio
         [Range(1, 32)]
         private int initialPoolSize = 8;
 
+        [SerializeField]
+        private AudioClip mainMusic;
+
         [Title("Audio Mixer")]
         [SerializeField]
         [Tooltip("The AudioMixer used to control the audio groups.")]
@@ -32,22 +35,10 @@ namespace GD.Audio
         private AudioMixerGroup masterGroup;
 
         [SerializeField]
-        private AudioMixerGroup ambientGroup;
-
-        [SerializeField]
-        private AudioMixerGroup backgroundGroup;
-
-        [SerializeField]
         private AudioMixerGroup sfxGroup;
 
         [SerializeField]
-        private AudioMixerGroup uiGroup;
-
-        [SerializeField]
-        private AudioMixerGroup voiceoverGroup;
-
-        [SerializeField]
-        private AudioMixerGroup weaponGroup;
+        private AudioMixerGroup musicGroup;
 
         private ObjectPool<AudioSource> audioSourcePool;
 
@@ -57,6 +48,8 @@ namespace GD.Audio
 
             // Initialize the AudioSource pool
             audioSourcePool = new ObjectPool<AudioSource>(audioSourcePrefab, initialPoolSize, transform);
+
+            PlaySound(mainMusic, AudioMixerGroupName.Music, transform.position, true);
         }
 
         /// <summary>
@@ -71,17 +64,13 @@ namespace GD.Audio
             return groupName switch
             {
                 AudioMixerGroupName.Master => masterGroup,
-                AudioMixerGroupName.Ambient => ambientGroup,
-                AudioMixerGroupName.Background => backgroundGroup,
                 AudioMixerGroupName.SFX => sfxGroup,
-                AudioMixerGroupName.UI => uiGroup,
-                AudioMixerGroupName.Weapon => weaponGroup,
-                AudioMixerGroupName.Voiceover => voiceoverGroup,
+                AudioMixerGroupName.Music => musicGroup,
                 _ => null,
             };
         }
 
-        public void PlaySound(AudioClip clip, AudioMixerGroupName groupName, Vector3 position = default)
+        public void PlaySound(AudioClip clip, AudioMixerGroupName groupName, Vector3 position = default, bool loop = false)
         {
             AudioSource audioSource = audioSourcePool.Get();
             audioSource.transform.position = position;
@@ -89,7 +78,14 @@ namespace GD.Audio
             audioSource.outputAudioMixerGroup = GetAudioMixerGroup(groupName);
             audioSource.Play();
 
-            StartCoroutine(ReturnAudioSourceAfterPlaying(audioSource));
+            if (loop)
+            {
+                audioSource.loop = true;
+            }
+            else
+            {
+                StartCoroutine(ReturnAudioSourceAfterPlaying(audioSource));
+            }
         }
 
         private IEnumerator ReturnAudioSourceAfterPlaying(AudioSource audioSource)

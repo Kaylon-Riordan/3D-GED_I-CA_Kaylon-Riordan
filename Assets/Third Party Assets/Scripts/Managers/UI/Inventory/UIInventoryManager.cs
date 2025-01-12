@@ -3,6 +3,8 @@ using TMPro;
 using UnityEngine.UI;
 using System.Collections.Generic;
 using GD.Items;
+using GD.Audio;
+using GD.Types;
 
 namespace GD.UI
 {
@@ -26,6 +28,10 @@ namespace GD.UI
         [SerializeField]
         [Tooltip("Prefab for inventory item UI")]
         private GameObject itemUIPrefab;
+
+        [SerializeField]
+        [Tooltip("Sound played when item is slotted")]
+        private AudioClip slotSound;
 
         [HideInInspector]
         public Slot currentSlot;
@@ -97,6 +103,8 @@ namespace GD.UI
 
         public void OnButtonPressed(ItemData data)
         {
+            AudioManager.Instance.PlaySound(slotSound, AudioMixerGroupName.SFX, currentSlot.transform.position);
+
             if (this.currentSlot.slotedItem != null)
             {
                 inventory.Add(this.currentSlot.slotedItem, 1);

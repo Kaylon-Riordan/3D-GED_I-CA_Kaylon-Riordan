@@ -22,3 +22,13 @@ Mandala, L. (2023). AI generated Battery full charging load status. AI Generativ
 Flaticon. (2021). Resistor Icon - 5151250 [online]. Flaticon [online]. Available from: https://www.flaticon.com/free-icon/resistor_5151250 [accessed 10 January 2025].
 
 X PNG Designs for T Shirt & Merch. (2025). Vexels.com [online]. Available from: https://www.vexels.com/merch/png/x/ [accessed 11 January 2025].
+
+Arrow Electronics. (2023). How to read resistor color code [online]. Arrow.com [online]. Available from: https://www.arrow.com/en/research-and-events/articles/resistor-color-code [accessed 12 January 2025].
+
+Clip Board PNG, Vector, PSD, and Clipart With Transparent Background for Free Download | Pngtree. (2022). Pngtree [online]. Available from: https://pngtree.com/free-png-vectors/clip-board [accessed 12 January 2025].
+
+Freesound - Laidback Steps by code_box. (2021). Freesound.org [online]. Available from: https://freesound.org/people/code_box/sounds/554626/ [accessed 12 January 2025].
+
+Freesound - Quiz Gameshow Correct Ping 14..mp3 by craigscottuk. (2022). Freesound.org [online]. Available from: https://freesound.org/people/craigscottuk/sounds/644963/ [accessed 12 January 2025].
+
+Freesound - click.mp3 by saha213131. (2023). Freesound.org [online]. Available from: https://freesound.org/people/saha213131/sounds/684505/ [accessed 12 January 2025].
