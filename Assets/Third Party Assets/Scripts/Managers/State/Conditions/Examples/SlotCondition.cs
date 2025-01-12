@@ -19,9 +19,7 @@ namespace GD.State
 
         protected override bool EvaluateCondition(ConditionContext conditionContext)
         {
-            Debug.Log(slot.GetComponent<Slot>().slotedItem);
             if (slot.GetComponent<Slot>().slotedItem == null) return false;
-            Debug.Log(slot.GetComponent<Slot>().slotedItem == data);
             return slot.GetComponent<Slot>().slotedItem == data;
         }
     }

@@ -72,7 +72,7 @@ namespace GD.UI
 
             var button = itemUI.GetComponentInChildren<Button>();
             button.onClick.RemoveAllListeners();
-            button.onClick.AddListener(() => this.currentSlot.SlotItem(itemData));
+            button.onClick.AddListener(() => this.OnButtonPressed(itemData));
 
             var countText = itemUI.GetComponentInChildren<TextMeshProUGUI>();
             countText.text = count.ToString();
@@ -92,7 +92,24 @@ namespace GD.UI
         public void SetSlot(Slot newSlot)
         {
             this.currentSlot = newSlot;
-            InitializeUI();
+            OnInventoryChange();
+        }
+
+        public void OnButtonPressed(ItemData data)
+        {
+            if (this.currentSlot.slotedItem != null)
+            {
+                inventory.Add(this.currentSlot.slotedItem, 1);
+                CreateOrUpdate(this.currentSlot.slotedItem, 1);
+            }
+            this.currentSlot.SlotItem(data);
+            this.inventory.Remove(data, 1);
+            if (itemUIDictionary.TryGetValue(data, out var itemUI))
+            {
+                Destroy(itemUI);
+                itemUIDictionary.Remove(data);
+            }
+            OnInventoryChange();
         }
 
         #endregion Methods
