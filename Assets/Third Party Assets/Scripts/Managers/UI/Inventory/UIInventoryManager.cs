@@ -102,14 +102,19 @@ namespace GD.UI
                 inventory.Add(this.currentSlot.slotedItem, 1);
                 CreateOrUpdate(this.currentSlot.slotedItem, 1);
             }
+
             this.currentSlot.SlotItem(data);
             this.inventory.Remove(data, 1);
+
             if (itemUIDictionary.TryGetValue(data, out var itemUI))
             {
                 Destroy(itemUI);
                 itemUIDictionary.Remove(data);
             }
+
             OnInventoryChange();
+
+            currentSlot.setModel(data.prefab);
         }
 
         #endregion Methods

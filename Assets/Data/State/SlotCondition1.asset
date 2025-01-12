@@ -17,7 +17,7 @@ MonoBehaviour:
   evaluateStrategy: 0
   priorityLevel: 5
   OnConditionMet: {fileID: 0}
-  isMet: 0
-  timeMet: -1
+  isMet: 1
+  timeMet: 15.440956
   slot: {fileID: 0}
   data: {fileID: 11400000, guid: 88d2fec25fcba544095b52a82749a103, type: 2}

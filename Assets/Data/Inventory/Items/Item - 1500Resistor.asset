@@ -16,6 +16,7 @@ MonoBehaviour:
   description: ???
   itemCategory: 1
   itemType: 3
+  prefab: {fileID: 3182416671298564688, guid: b746cf9bf3c63bc40a9c845cfc4e1be1, type: 3}
   uiIcon: {fileID: 21300000, guid: 90655e457bdd90941baadc1ca6e2579d, type: 3}
   audioClip: {fileID: 0}
   audioPosition: {x: 35.989998, y: 2.2866344, z: 33.059998}

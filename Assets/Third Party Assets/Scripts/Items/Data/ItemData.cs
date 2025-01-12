@@ -25,6 +25,10 @@ namespace GD.Items
         [Tooltip("The type of item")]
         private ItemType itemType = ItemType.Resistors;
 
+        [SerializeField]
+        [Tooltip("The prefab for the items model")]
+        public GameObject prefab;
+
         [FoldoutGroup("UI & Sound", expanded: true)]
         [SerializeField]
         [PreviewField(100, ObjectFieldAlignment.Left)]
