@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 227c8ccce0d5c144e81f68a3baab55f8, type: 3}
-  m_Name: Item - 5000Bulb
+  m_Name: Item - Bulb
   m_EditorClassIdentifier: 
-  name: '?'
-  description: ???
+  name: Bulb
+  description: Makes light if correct resistance and voltage is in the circuit
   itemCategory: 1
   itemType: 2
   prefab: {fileID: 7485426409464673253, guid: f1d1029427e8a1f47ac6e6ffedd1d1da, type: 3}
