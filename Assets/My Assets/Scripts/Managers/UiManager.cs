@@ -23,6 +23,12 @@ public class UiManager : MonoBehaviour
     private GameObject clipBoard2;
 
     [SerializeField]
+    private GameObject clipBoard3;
+
+    [SerializeField]
+    private GameObject clipBoard4;
+
+    [SerializeField]
     private GameObject victory;
 
     [SerializeField]
@@ -39,6 +45,8 @@ public class UiManager : MonoBehaviour
         exitButton.SetActive(false);
         clipBoard1.SetActive(false);
         clipBoard2.SetActive(false);
+        clipBoard3.SetActive(false);
+        clipBoard4.SetActive(false);
         victory.SetActive(false);
         inventoryScreen.SetActive(false);
     }
@@ -65,6 +73,21 @@ public class UiManager : MonoBehaviour
         exitButton.SetActive(true);
         mainUi.SetActive(false);
     }
+    public void CB3Open()
+    {
+        AudioManager.Instance.PlaySound(paperSound, AudioMixerGroupName.SFX);
+        clipBoard3.SetActive(true);
+        exitButton.SetActive(true);
+        mainUi.SetActive(false);
+    }
+
+    public void CB4Open()
+    {
+        AudioManager.Instance.PlaySound(paperSound, AudioMixerGroupName.SFX);
+        clipBoard4.SetActive(true);
+        exitButton.SetActive(true);
+        mainUi.SetActive(false);
+    }
 
     public void Victorypen()
     {
@@ -80,6 +103,8 @@ public class UiManager : MonoBehaviour
         exitButton.SetActive(false);
         clipBoard1.SetActive(false);
         clipBoard2.SetActive(false);
+        clipBoard3.SetActive(false);
+        clipBoard4.SetActive(false);
         victory.SetActive(false);
         startMenu.SetActive(false);
         inventoryScreen.SetActive(false);

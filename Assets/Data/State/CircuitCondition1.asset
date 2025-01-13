@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8673f7a91c9dcac40805082cde3695b8, type: 3}
+  m_Name: CircuitCondition1
+  m_EditorClassIdentifier: 
+  name: Circuit Condition 1
+  description: Checks if circuit 2 is corectly completed.
+  evaluateStrategy: 0
+  priorityLevel: 5
+  OnConditionMet: {fileID: 0}
+  isMet: 1
+  timeMet: 15.862094
+  slot1: {fileID: 0}
+  slot2: {fileID: 0}
+  slot3: {fileID: 0}
+  data1: {fileID: 11400000, guid: 88d2fec25fcba544095b52a82749a103, type: 2}
+  data2: {fileID: 11400000, guid: 5b2fdb7686de08e4c9139f92169638f4, type: 2}
+  data3: {fileID: 11400000, guid: 033d65ba87cf27742b96c2fa6b07213a, type: 2}
+  light1: {fileID: 0}
+  light2: {fileID: 0}
+  light3: {fileID: 0}
