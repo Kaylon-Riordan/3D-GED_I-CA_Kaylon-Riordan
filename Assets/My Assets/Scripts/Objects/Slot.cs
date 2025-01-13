@@ -27,6 +27,6 @@ public class Slot : MonoBehaviour
         {
             Destroy(itemModel);
         }
-        itemModel = Instantiate(newModel, transform.position, Quaternion.identity);
+        itemModel = Instantiate(newModel, transform.position, transform.rotation);
     }
 }

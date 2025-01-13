@@ -1,8 +1,10 @@
+using GD.Events;
 using GD.Items;
 using GD.Tick;
 using Sirenix.OdinInspector;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace GD.State
 {
@@ -52,6 +54,10 @@ namespace GD.State
         [SerializeField]
         [Tooltip("Set of optional conditions related to acheivements")]
         private List<ConditionBase> achievementConditions;
+
+        [SerializeField]
+        [Tooltip("The event that is raised on victory")]
+        private GameEvent onWin;
 
         /// <summary>
         /// Indicates whether the game has ended.
@@ -131,15 +137,7 @@ namespace GD.State
         {
             Debug.Log($"Player Wins! Win condition met at {winCondition.TimeMet} seconds.");
 
-            // Implement win logic here, such as:
-            // - Displaying a victory screen
-            // - Transitioning to the next level
-            // - Awarding points or achievements
-            // - Playing a victory sound or animation
-
-            // Example:
-            // UIManager.Instance.ShowVictoryScreen();
-            // SceneManager.LoadScene("NextLevel");
+            onWin?.Raise();
         }
 
         /// <summary>
@@ -225,6 +223,10 @@ namespace GD.State
                     //do something here
                 }
             }
+        }
+        public void Restart()
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
     }
 }

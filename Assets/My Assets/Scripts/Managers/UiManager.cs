@@ -23,12 +23,24 @@ public class UiManager : MonoBehaviour
     private GameObject clipBoard2;
 
     [SerializeField]
+    private GameObject victory;
+
+    [SerializeField]
+    private GameObject startMenu;
+
+    [SerializeField]
     [Tooltip("Sound played when clip board is opened")]
     private AudioClip paperSound;
 
     void Awake()
     {
-        MainGameOpen();
+        startMenu.SetActive(true);
+        mainUi.SetActive(false);
+        exitButton.SetActive(false);
+        clipBoard1.SetActive(false);
+        clipBoard2.SetActive(false);
+        victory.SetActive(false);
+        inventoryScreen.SetActive(false);
     }
 
     public void InventoryOpen()
@@ -54,12 +66,22 @@ public class UiManager : MonoBehaviour
         mainUi.SetActive(false);
     }
 
+    public void Victorypen()
+    {
+        victory.SetActive(true);
+        mainUi.SetActive(false);
+        exitButton.SetActive(false);
+        inventoryScreen.SetActive(false);
+    }
+
     public void MainGameOpen()
     {
         mainUi.SetActive(true);
         exitButton.SetActive(false);
         clipBoard1.SetActive(false);
         clipBoard2.SetActive(false);
+        victory.SetActive(false);
+        startMenu.SetActive(false);
         inventoryScreen.SetActive(false);
     }
 }
