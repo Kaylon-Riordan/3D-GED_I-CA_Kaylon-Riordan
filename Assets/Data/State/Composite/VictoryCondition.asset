@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 41256f7f173f0d8478ab9eb86511b0f2, type: 3}
   m_Name: VictoryCondition
   m_EditorClassIdentifier: 
-  name: Circuit Conndition
-  description: 
+  name: Victory condition
+  description: checks if all circuits are completed correctly
   evaluateStrategy: 1
   priorityLevel: 5
   OnConditionMet: {fileID: 0}
@@ -23,3 +23,5 @@ MonoBehaviour:
   conditions:
   - {fileID: 11400000, guid: c257ec5260625f94590b117df01e4542, type: 2}
   - {fileID: 11400000, guid: 728dbd31bb9f5d349a05a2897e98426c, type: 2}
+  - {fileID: 11400000, guid: 53422c10c4de5f746b6d9f8c028e7d06, type: 2}
+  - {fileID: 11400000, guid: 48f959b0546e0af469423dda42dc76ba, type: 2}

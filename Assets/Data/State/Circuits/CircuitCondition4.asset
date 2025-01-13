@@ -9,11 +9,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0274163414cacd14fb1fe3761911f042, type: 3}
-  m_Name: CircuitCondition2
+  m_Script: {fileID: 11500000, guid: e7f8588e30657c246b1511223e0b3d5a, type: 3}
+  m_Name: CircuitCondition4
   m_EditorClassIdentifier: 
-  name: Circuit Condition 2
-  description: 
+  name: Circuit Condition 4
+  description: Checks if circuit 4 is corectly completed.
   evaluateStrategy: 1
   priorityLevel: 5
   OnConditionMet: {fileID: 0}
@@ -24,13 +24,13 @@ MonoBehaviour:
   slot3: {fileID: 0}
   slot4: {fileID: 0}
   slot5: {fileID: 0}
-  slot6: {fileID: 0}
   data1: {fileID: 11400000, guid: 88d2fec25fcba544095b52a82749a103, type: 2}
-  data2: {fileID: 11400000, guid: 8387f9ece14b7ff4e83b5f77b0b66d55, type: 2}
-  data3: {fileID: 11400000, guid: 033d65ba87cf27742b96c2fa6b07213a, type: 2}
+  data2: {fileID: 11400000, guid: 325ded3d4acaff24a9f9d471cb7c7883, type: 2}
+  data3: {fileID: 11400000, guid: 4e78c391065cf384a91498f8da9c784b, type: 2}
+  data4: {fileID: 11400000, guid: adea0e343bafc604c927c27c756df35b, type: 2}
+  data5: {fileID: 11400000, guid: 033d65ba87cf27742b96c2fa6b07213a, type: 2}
   light1: {fileID: 0}
   light2: {fileID: 0}
   light3: {fileID: 0}
   light4: {fileID: 0}
   light5: {fileID: 0}
-  light6: {fileID: 0}
