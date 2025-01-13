@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 227c8ccce0d5c144e81f68a3baab55f8, type: 3}
+  m_Name: Item - 220Resistor
+  m_EditorClassIdentifier: 
+  name: 220 ohm resistor
+  description: creates 220 ohms of resistance
+  itemCategory: 1
+  itemType: 3
+  prefab: {fileID: 8719461571597612364, guid: 4e9b6f2833e691c4eb45ef8c38e1a9de, type: 3}
+  uiIcon: {fileID: 21300000, guid: 84f26a042d679444f8240e4277ba9900, type: 3}
+  audioClip: {fileID: 0}
+  audioPosition: {x: 43.571938, y: 2.000002, z: 21.069996}

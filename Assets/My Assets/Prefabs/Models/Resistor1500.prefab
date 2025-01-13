@@ -350,7 +350,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4477777752826385028}
   m_Layer: 7
-  m_Name: Resistor
+  m_Name: Resistor1500
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
