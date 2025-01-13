@@ -7,6 +7,7 @@ using UnityEngine;
 // code in this script is based off code from this video (Pandemonium (2022). Unity 2D Platformer for Complete Beginners - #14 GAME OVER. YouTube. Available at: https://www.youtube.com/watch?v=3tQSAtaSwvc&list=PLgOEwFbvGm5o8hayFB6skAfa8Z-mw4dPV&index=15 [Accessed 25 Oct. 2023].)
 public class UiManager : MonoBehaviour
 {
+    // Take in all the pannels of the ui
     [SerializeField]
     private GameObject mainUi;
 
@@ -38,6 +39,9 @@ public class UiManager : MonoBehaviour
     [Tooltip("Sound played when clip board is opened")]
     private AudioClip paperSound;
 
+    /// <summary>
+    /// Set only the start menu to show when game launches
+    /// </summary>
     void Awake()
     {
         startMenu.SetActive(true);
@@ -51,13 +55,13 @@ public class UiManager : MonoBehaviour
         inventoryScreen.SetActive(false);
     }
 
+    // Opens the matching menu and turns off player controles
     public void InventoryOpen()
     {
         inventoryScreen.SetActive(true);
         exitButton.SetActive(true);
         mainUi.SetActive(false);
     }
-
     public void CB1Open()
     {
         AudioManager.Instance.PlaySound(paperSound, AudioMixerGroupName.SFX);
@@ -65,7 +69,6 @@ public class UiManager : MonoBehaviour
         exitButton.SetActive(true);
         mainUi.SetActive(false);
     }
-
     public void CB2Open()
     {
         AudioManager.Instance.PlaySound(paperSound, AudioMixerGroupName.SFX);
@@ -80,7 +83,6 @@ public class UiManager : MonoBehaviour
         exitButton.SetActive(true);
         mainUi.SetActive(false);
     }
-
     public void CB4Open()
     {
         AudioManager.Instance.PlaySound(paperSound, AudioMixerGroupName.SFX);
@@ -88,7 +90,6 @@ public class UiManager : MonoBehaviour
         exitButton.SetActive(true);
         mainUi.SetActive(false);
     }
-
     public void Victorypen()
     {
         victory.SetActive(true);
@@ -97,6 +98,9 @@ public class UiManager : MonoBehaviour
         inventoryScreen.SetActive(false);
     }
 
+    /// <summary>
+    /// close all menus except the ui overlay when gameplay is happening
+    /// </summary>
     public void MainGameOpen()
     {
         mainUi.SetActive(true);

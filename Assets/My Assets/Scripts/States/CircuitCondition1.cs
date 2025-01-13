@@ -44,6 +44,7 @@ namespace GD.State
 
         protected override bool EvaluateCondition(ConditionContext conditionContext)
         {
+            // evaluate all possible combinations taht could be correct
             if(evaluate(slot1, slot2, slot3, light3))
             {
                 return true;
@@ -65,11 +66,13 @@ namespace GD.State
             }
         }
 
+        // evaluate if the given order of slots has all the correct components
         private bool evaluate(Transform s1, Transform s2, Transform s3, Light l)
         {
+            // if components are correct then turn on coresponding light and set condition to true
             if (s1.GetComponent<Slot>().slotedItem == data1 && s2.GetComponent<Slot>().slotedItem == data2 && s3.GetComponent<Slot>().slotedItem == data3)
             {
-                l.intensity = 500f;
+                l.intensity = 30f;
                 return true;
             }
             return false;

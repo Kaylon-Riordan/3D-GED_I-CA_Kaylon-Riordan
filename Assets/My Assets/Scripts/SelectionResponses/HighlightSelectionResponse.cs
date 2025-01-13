@@ -38,6 +38,7 @@ namespace GD.Selection
         {
             input = InputManager.instance;
 
+            // add the interact function to the left click down delegate from the input manager
             InputManager.leftClickDown += Interact;
 
             hovering = false;
@@ -47,6 +48,7 @@ namespace GD.Selection
         public override void OnSelect(Transform currentTransform)
         {
             var obj = currentTransform.gameObject;
+            // only run the code for selection, if the player is in range of the slot
             if (obj.GetComponent<Slot>().targetArea.inArea)
             {
                 //get the renderer to access the material
@@ -79,8 +81,12 @@ namespace GD.Selection
             hovering = false;
         }
 
+        /// <summary>
+        /// Raises an event when an object is left clicked
+        /// </summary>
         public void Interact()
         {
+            // If the cursor is over an object and the player is in range trigger the selection event
             if(hovering)
             {
                 onSelection?.Raise(current.GetComponent<Slot>());

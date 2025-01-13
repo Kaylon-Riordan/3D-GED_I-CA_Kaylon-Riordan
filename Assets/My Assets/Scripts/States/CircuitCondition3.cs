@@ -86,8 +86,8 @@ namespace GD.State
             if (s1.GetComponent<Slot>().slotedItem == data1 && s2.GetComponent<Slot>().slotedItem == data1 && ((s3.GetComponent<Slot>().slotedItem == data2 && s4.GetComponent<Slot>().slotedItem == data3) 
                 || (s3.GetComponent<Slot>().slotedItem == data3 && s4.GetComponent<Slot>().slotedItem == data2)) && s5.GetComponent<Slot>().slotedItem == data4 && s6.GetComponent<Slot>().slotedItem == data4)
             {
-                l1.intensity = 500f;
-                l2.intensity = 500f;
+                l1.intensity = 30f;
+                l2.intensity = 30f;
                 return true;
             }
             return false;

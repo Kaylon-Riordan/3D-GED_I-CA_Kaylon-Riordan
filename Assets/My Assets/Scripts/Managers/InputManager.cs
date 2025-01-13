@@ -12,6 +12,7 @@ public class InputManager : MonoBehaviour
     public InputAction leftClick;
     public InputAction rightClick;
 
+    // create all the delegates that this script will trigger
     public delegate void LeftClickDown();
     public static LeftClickDown leftClickDown;
     public delegate void LeftClickUp();
@@ -26,6 +27,7 @@ public class InputManager : MonoBehaviour
 
     private void Awake()
     {
+        // creates a singleton instance of the input manager so it can be accessed in all other scripts
         if (instance != null && instance != this)
         {
             Destroy(gameObject);
@@ -37,6 +39,9 @@ public class InputManager : MonoBehaviour
 
         active = true;
     }
+    /// <summary>
+    /// set up all the inputs taken in from the new input system
+    /// </summary>
     private void OnEnable()
     {
         leftClick = inputs.Player.LeftClick;
@@ -66,6 +71,7 @@ public class InputManager : MonoBehaviour
     /// <param name="context"> Informs when the left click input is activated </param>
     public void LeftClickPressed(InputAction.CallbackContext context)
     {
+        // if any function are assigned to this delegate, then trigger the delegate
         if (leftClickDown != null && active)
         {
             leftClickDown();
@@ -78,6 +84,7 @@ public class InputManager : MonoBehaviour
     /// <param name="context"> Informs when the left click input is activated </param>
     public void LeftClickReleased(InputAction.CallbackContext context)
     {
+        // if any function are assigned to this delegate, then trigger the delegate
         if (leftClickUp!= null && active)
         {
             leftClickUp();
@@ -90,6 +97,7 @@ public class InputManager : MonoBehaviour
     /// <param name="context"> Informs when the right click input is activated </param>
     public void RightClickPressed(InputAction.CallbackContext context)
     {
+        // if any function are assigned to this delegate, then trigger the delegate
         if (rightClickDown != null && active)
         {
             rightClickDown();
@@ -102,7 +110,8 @@ public class InputManager : MonoBehaviour
     /// <param name="context"> Informs when the right click input is activated </param>
     public void RightClickReleased(InputAction.CallbackContext context)
     {
-        if(rightClickUp != null && active)
+        // if any function are assigned to this delegate, then trigger the delegate
+        if (rightClickUp != null && active)
         {
             rightClickUp();
         }

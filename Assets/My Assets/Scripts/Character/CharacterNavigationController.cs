@@ -36,11 +36,14 @@ namespace GD.Controllers
         /// </summary>
         private void FixedUpdate()
         {
+            // check if the player is holding right click
             if (move)
             {
+                // create a ray cast from camera and store the position that it hit the nav mesh
                 Ray ray = cam.ScreenPointToRay(Input.mousePosition);
                 RaycastHit hit;
 
+                // set the players destination to that point on the nav mesh
                 if (Physics.Raycast(ray, out hit))
                 {
                     player.SetDestination(hit.point);

@@ -12,11 +12,18 @@ public class TargetInArea : MonoBehaviour
 
     public bool inArea;
 
+    /// <summary>
+    /// Set player to not be in area by default
+    /// </summary>
     private void Awake()
     {
         inArea = false;
     }
 
+    /// <summary>
+    /// when an object enters the area, activate bool to true if its the player
+    /// </summary>
+    /// <param name="other"> other object in the collision </param>
     private void OnTriggerEnter(Collider other)
     {
         if (targetLayer.OnLayer(other.gameObject))
@@ -25,6 +32,10 @@ public class TargetInArea : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// when an object exits the area, deactivate bool to true if its the player
+    /// </summary>
+    /// <param name="other"> other object in collision </param>
     private void OnTriggerExit(Collider other)
     {
         if (targetLayer.OnLayer(other.gameObject))
