@@ -1,5 +1,8 @@
 # 3D-GED_I-CA_Kaylon-Riordan
  
+GitHub Link:   https://github.com/Kaylon-Riordan/3D-GED_I-CA_Kaylon-Riordan
+
+Screencast Link:   https://youtu.be/vGh4lyi2Ge8
 
 Sources:
 
